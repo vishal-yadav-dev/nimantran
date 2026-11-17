@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>You're invited</title>
+<meta name="generator" content="Nimantran Studio">
+<meta name="copyright" content="Nimantran Studio. All rights reserved.">
+<!-- Nimantran Studio · invitation page. Unauthorised copying or rebranding of this software is prohibited. -->
+<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/css/invite.css">
+<style>html,body{margin:0;height:100%;background:#1b1426}#app{position:fixed;inset:0}.err{color:#fff;font:16px Poppins,sans-serif;display:grid;place-items:center;height:100%;text-align:center;padding:24px}</style>
+</head>
+<body>
+<div id="app"></div>
+<script type="module">
+import { loadInvite } from '/js/api.js';
+import { mountViewer } from '/js/viewer.js';
+const id = location.pathname.split('/').filter(Boolean).pop();
+const app = document.getElementById('app');
+try {
+  const inv = await loadInvite(id);
+  const tt = inv.text[inv.lang] || inv.text.en;
+  document.title = [tt.title, (tt.names || []).filter(Boolean).join(' & ')].filter(Boolean).join(' · ');
+  await mountViewer(app, inv, { id, credit: 'Made with Nimantran', shareUrl: location.href });
+} catch (e) {
+  app.innerHTML = '<div class="err">' + e.message + '</div>';
+}
+</script>
+</body>
+</html>

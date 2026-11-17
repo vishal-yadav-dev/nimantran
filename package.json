@@ -1,0 +1,16 @@
+{
+  "name": "nimantran-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Design animated invitation videos and interactive invitation links in Hindi, English, Punjabi and Gujarati.",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": { "node": ">=18.17" },
+  "optionalDependencies": {
+    "nodemailer": "^6.9.16"
+  },
+  "license": "UNLICENSED"
+}

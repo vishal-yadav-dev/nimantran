@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nimantran Studio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Design animated invitation videos and interactive invitation links in Hindi, English, Punjabi and Gujarati.">
+<meta name="generator" content="Nimantran Studio">
+<meta name="copyright" content="Nimantran Studio. All rights reserved.">
+<!-- Nimantran Studio. Copyright (c) Nimantran Studio. Unauthorised copying, rebranding or redistribution of this software is prohibited. -->
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="css/studio.css">
+<link rel="stylesheet" href="css/invite.css">
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand"><b>निमंत्रण</b><span>Nimantran Studio</span></div>
+    <div class="tname" id="tname"></div>
+    <div class="status" id="status"><i></i><span>Checking server…</span></div>
+    <div class="acts">
+      <button class="btn hide-sm" id="btnGuest">Guest view</button>
+      <button class="btn" id="btnVideo">Download video</button>
+      <button class="btn primary" id="btnShare">Share link</button>
+    </div>
+  </header>
+
+  <main class="work">
+    <aside class="pane gallery" id="paneTemplates" aria-label="Templates">
+      <div class="g-head">
+        <h2>Templates <small id="gcount"></small></h2>
+        <div class="chips" id="occChips" role="group" aria-label="Occasion"></div>
+        <div class="row">
+          <select id="layoutFilter" aria-label="Layout" style="flex:1"></select>
+        </div>
+        <div class="swatches" id="palFilter" role="group" aria-label="Colour"></div>
+      </div>
+      <div class="grid" id="grid"></div>
+    </aside>
+
+    <section class="pane stage active" id="panePreview" aria-label="Preview">
+      <div class="phone"><canvas id="cv" aria-label="Invitation preview"></canvas>
+        <button class="lock" id="lock" hidden><b>▶ See it come alive</b><span>Enter your email to unlock the animated preview and free video download</span></button></div>
+      <div class="timebar"><b id="timefill"></b></div>
+      <div class="scenes" id="sceneChips"></div>
+      <div class="controls">
+        <button class="btn small" id="btnPlay">Pause</button>
+        <button class="btn small" id="btnRestart">Restart</button>
+        <button class="btn small" id="btnGuest2">Open as guest</button>
+      </div>
+    </section>
+
+    <aside class="pane inspector" id="paneEdit" aria-label="Edit">
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" data-tab="text" aria-selected="true">Text</button>
+        <button class="tab" role="tab" data-tab="details">Details</button>
+        <button class="tab" role="tab" data-tab="design">Design</button>
+        <button class="tab" role="tab" data-tab="media">Media</button>
+        <button class="tab" role="tab" data-tab="ai">AI help</button>
+        <button class="tab" role="tab" data-tab="share">Share</button>
+      </div>
+      <div class="panel" id="panel"></div>
+    </aside>
+  </main>
+
+  <nav class="mtabs" role="tablist" aria-label="Sections">
+    <button data-m="paneTemplates">Templates</button>
+    <button data-m="panePreview" aria-selected="true">Preview</button>
+    <button data-m="paneEdit">Edit</button>
+  </nav>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<div id="viewerRoot"></div>
+<script type="module" src="js/studio.js"></script>
+</body>
+</html>
